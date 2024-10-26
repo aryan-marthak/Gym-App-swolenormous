@@ -1,11 +1,10 @@
 import React from 'react'
 
-function Workout() {
+export default function Workout(props) {
+  const { workout } = props
   return (
     <div>
       
     </div>
   )
 }
-
-export default Workout
