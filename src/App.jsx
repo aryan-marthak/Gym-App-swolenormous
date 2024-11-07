@@ -12,7 +12,12 @@ function App() {
   const [goal, setGoal] = useState('strength_power')
 
   function updateWorkout() {
-      let newWorkout = generateWorkout(poison, muscles, goal)
+    if (muscles.length < 1){
+      return
+    }
+      let newWorkout = generateWorkout({poison, muscles, goal})
+      // console.log(newWorkout)
+      setWorkout(newWorkout)
   }
 
   return (
@@ -25,6 +30,7 @@ function App() {
         setMuscles={setMuscles}
         goal={goal}
         setGoal={setGoal}
+        updateWorkout={updateWorkout}
       />
       {workout && (<Workout workout={workout} />)}
     </main>
